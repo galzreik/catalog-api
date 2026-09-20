@@ -1,0 +1,17 @@
+# Python creates these folders automatically to store compiled versions
+# of Python files. They do not need to be saved in Git.
+__pycache__/
+*.pyc
+
+# Ignore the local virtual environment.
+# Dependencies should be installed separately rather than committed to Git.
+venv/
+.venv/
+
+# Environment files may contain passwords, API keys, database URLs,
+# or other secrets, so they should never be committed.
+.env
+
+# VS Code can create local editor settings that are specific
+# to this computer and do not need to be part of the project.
+.vscode/
