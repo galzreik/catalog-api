@@ -2,10 +2,10 @@
 # We need this class to create the main API application.
 from fastapi import FastAPI
 
-# Import the categories module from our routers package.
-# This gives main.py access to the router object that we created
-# inside routers/categories.py.
-from routers import categories
+# Import the categories and products modules from our routers package.
+# This gives main.py access to the router objects created inside
+# routers/categories.py and routers/products.py.
+from routers import categories, products
 
 
 # Create the main FastAPI application.
@@ -18,3 +18,8 @@ app = FastAPI()
 # Without include_router(), the routes defined in categories.py would
 # exist in that file but would not be available through the main API.
 app.include_router(categories.router)
+
+# Register the products router with the main FastAPI application.
+# This makes the product endpoints defined in products.py available
+# through our API.
+app.include_router(products.router)
